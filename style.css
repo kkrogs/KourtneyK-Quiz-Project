@@ -1,0 +1,35 @@
+.panel {
+    font: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 3px solid rgb(224, 14, 14);
+    padding: 15px;
+    width: 500px;
+    height: 500px;
+    text-align: left;
+    
+    
+  }
+  
+  .button {
+    font: 22px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(42, 22, 228);
+    padding: 10px 42px;
+    color: white;
+  }
+  
+  h1 {
+    margin-top: 5px;
+    font-size: 170%;
+  }
+
+#align-left {
+text-align: left;
+
+}
+
+#blockdisplay button{
+  margin-bottom:10px;
+  display:block;
+
+}
