@@ -53,6 +53,11 @@ var next = document.querySelector(".next");
 var scoreCount = document.querySelector(".scorehtml");
 
 //new
+var finalScore = document.querySelector(".submitScore");
+
+var showScorePage = document.getElementById("showScore");
+var finalDiv = document.querySelector(".finalDiv");
+//new
 
 
 
@@ -88,30 +93,37 @@ displayQuestion=function(){
   button02.textContent = question[currentQuestionIndex].choices[1];
   button03.textContent = question[currentQuestionIndex].choices[2];
   button04.textContent = question[currentQuestionIndex].choices[3];
+  //make value referencing part of the html that is hidden to unhide it, call the var here along with the current question index. Should also hide the questions
+// if (currentQuestionIndex > question.length) {
+// alert("test");
+// }
+
+
   console.log(currentQuestionIndex);
 }
 next.addEventListener("click",function(){
   currentQuestionIndex++;
-if (currentQuestionIndex >= question.length) 
- {
+// if (currentQuestionIndex > question.length) 
+// { alert("abc");
 
 
-}
-else {
+// }
+// else {
+//  alert("highscore";)
 //make high score section no longer hidden
 
 
 
 displayQuestion();
-}
+//}
 //we were not incrementing correctly according to the web questions being displayed,why we had to switch it.Swapped line 90 with 91.
 
-}
-//new code below
+});
 
 
 
-)
+
+
 //end of function
 
 checkAnswer=function() {
@@ -138,6 +150,29 @@ button01.addEventListener("click",checkAnswer);
     button03.addEventListener("click",checkAnswer);
 
       button04.addEventListener("click",checkAnswer);
+
+
+
+
+      finalScore.addEventListener("click",function(){
+
+
+//call the showing function instead of finalScore
+finalDiv.hidden = false;
+firstQuestion.hidden = true;
+
+
+// showfinalScore();
+       }
+      );
+
+// showfinalScore=function(){
+  
+//  finalDiv.textContent 
+
+// };
+  
+
 
 
 
