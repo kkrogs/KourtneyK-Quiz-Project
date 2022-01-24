@@ -59,7 +59,10 @@ var showScorePage = document.getElementById("showScore");
 var finalDiv = document.querySelector(".finalDiv");
 //new
 
+var submitScoreBtn = document.querySelector(".submitScoreButton");
+var finalScoreCt = document.querySelector(".highScore");
 
+var h2Score = document.querySelector(".scoreH2");
 
 startButton.addEventListener("click",function() {
 starting.hidden = true;
@@ -158,13 +161,34 @@ button01.addEventListener("click",checkAnswer);
 
 
 //call the showing function instead of finalScore
+//if the user gets to this section, make the timer go to 0 seconds or clearInterval
+
 finalDiv.hidden = false;
 firstQuestion.hidden = true;
+scoreCount.hidden=true;
+h2Score.hidden=true;
+
+event.preventDefault()
+        finalScoreCt.textContent=score;
+        console.log(this.textContent);
 
 
-// showfinalScore();
-       }
-      );
+      });
+
+
+
+
+//new
+      submitScoreBtn.addEventListener("click",function(event){
+        // event.preventDefault()
+        // finalScoreCt.textContent=score;
+        
+
+        // console.log(this.textContent);
+        // not added showfinalScore();
+               });
+//new
+
 
 // showfinalScore=function(){
   
