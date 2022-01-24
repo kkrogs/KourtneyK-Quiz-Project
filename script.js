@@ -63,6 +63,7 @@ var submitScoreBtn = document.querySelector(".submitScoreButton");
 var finalScoreCt = document.querySelector(".highScore");
 
 var h2Score = document.querySelector(".scoreH2");
+var zeroSecs = document.querySelector(".zeroSeconds");
 
 startButton.addEventListener("click",function() {
 starting.hidden = true;
@@ -79,8 +80,8 @@ var timerInterval = setInterval(function() {
   if(secondsLeft === 0) {
     // Stops execution of action at set interval
     clearInterval(timerInterval);
-    // Calls function to create and append image
-    sendMessage();
+    // Calls function to do something at 0
+    zeroSecsPage();
   }
 
 }, 1000);
@@ -189,37 +190,18 @@ event.preventDefault()
                });
 //new
 
-
-// showfinalScore=function(){
+zeroSecsPage=function(){
+  starting.hidden = true;
+  finalDiv.hidden = true;
+  firstQuestion.hidden = true;
+  scoreCount.hidden=true;
+  h2Score.hidden=true;
   
-//  finalDiv.textContent 
 
-// };
-  
+};
 
 
+//zeroSeconds
 
-
-
-
-//           button01.addEventListener("click",function(){
-//             correctIncorrect.textContent = incorrect;
-            
-//           });
-//             button02.addEventListener("click",function(){
-//               correctIncorrect.textContent = correct;
-//               // if (score < 4) {
-//               //   score++;
-//               //   scoreCount.textContent = score;
-//               //   localStorage.setItem("score",scoreCount)
-//               });
-        
-
-//               button03.addEventListener("click",function(){
-//                 correctIncorrect.textContent = incorrect;
-                
-//               });
-//                 button04.addEventListener("click",function(){
-//                   correctIncorrect.textContent = incorrect;
-                
-//                   });
+// zeroSeconds.textContent;
+//   console.log(this.textContent);
