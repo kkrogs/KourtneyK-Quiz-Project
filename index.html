@@ -15,7 +15,7 @@
 
 <body>
 <div>
-<h2>
+<h2 class="timerh2">
 Time Left: <span class="timer"></span>
 
 
@@ -48,19 +48,38 @@ Score: <span class="scorehtml"></span>
 </div>
 <!-- New -->
 
-<div class="finalDiv" hidden>
+<div id="finalDiv" hidden>
 
-    <h1>High Score: <span class="highScore"></span></h1>
-<!-- <h1>testing <text id="showScore"></text> </h1> -->
-<form>Your initials here</form>
+    <h1>Your Score: <span class="highScore"></span></h1>
+<!-- <h1>testing <text id="showScore"></text> </h1> ?????? -->
 
-<form>
-    <button class="submitScoreButton">Submit Score</button>
-    <input type="text" id="fname" name="fname">
 
-</form>
+    <form class="todo-form" method="POST">
+      <label for="todo-text">Add your initial: </label>
+      <input type="text" placeholder="Initial Here" name="todo-text" id="todo-text" />
+    </form>
+    <p>Total High Scores: <span id="todo-count">0</span></p>
+    <ul id="todo-list"></ul>
 
 </div>
+
+
+
+
+
+<!-- MAY NEED TO BE RE ADDED LATER -->
+<!-- <form>Your initials here</form>
+
+<form> -->
+    
+
+
+<!-- were between form -->
+    <!-- Same as below: <button class="submitScoreButton">Submit Score</button> -->
+    <!-- may need to be re added: <input type="text" id="fname" name="fname"> -->
+<!-- end of code -->
+
+<!-- DIV WAS HERE</div> -->
 
 
 
