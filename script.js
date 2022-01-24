@@ -251,10 +251,13 @@ function renderTodos() {
     li.setAttribute("data-index", i);
 
     var button = document.createElement("button");
-    button.textContent
+    //adds final score to list
+    button.textContent = score;
 
     li.appendChild(button);
     todoList.appendChild(li);
+
+  
   }
 }
 
@@ -262,7 +265,6 @@ function renderTodos() {
 function init() {
   // Get stored todos from localStorage
   var storedTodos = JSON.parse(localStorage.getItem("todos"));
-
   // If todos were retrieved from localStorage, update the todos array to it
   if (storedTodos !== null) {
     todos = storedTodos;
