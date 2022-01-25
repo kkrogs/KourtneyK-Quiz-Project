@@ -56,14 +56,14 @@ var h2Score = document.querySelector(".scoreH2");
 // Timer H2 header
 var timerH2 = document.querySelector(".timerh2");
 
-// RENAME BELOW
+// Final page form variables below
 
-// var todoInput = document.querySelector("#todo-text");
-// var todoForm = document.querySelector("#todo-form");
-// var todoList = document.querySelector("#todo-list");
-// var todoCountSpan = document.querySelector("#todo-count");
-
-// var todos = [];
+var initialInput = document.querySelector("#initial-text");
+var initialForm = document.querySelector(".initial-form"); 
+var initialList = document.querySelector("#initial-list");
+var initialCountSpan = document.querySelector("#initial-count");
+// initial array that will be logged to local storage
+var initials = [];
 
 // Hides start menu, displays first Question menu, and hides the final page when the 'start button' is clicked.
 // Also calls the display question function to display 
@@ -180,22 +180,17 @@ zeroSecsPage=function(){
 };
 
 
-var initialInput = document.querySelector("#initial-text");
-var initialForm = document.querySelector(".initial-form"); 
-var initialList = document.querySelector("#initial-list");
-var initialCountSpan = document.querySelector("#initial-count");
-
-var initials = [];
 
 
-// The following function renders items in a todo list as <li> elements
+
+// The following function renders items in a initials list as <li> elements
 function renderInitials() {
-  // Clear todoList element and update todoCountSpan
+  // Clear initialList element and update initialCountSpan
   initialList.innerHTML = "";
   initialCountSpan.textContent = initials.length;
-  //find how much time is left and then that is what needs to be displayed in the todocount span. That is what will be pushed into my object that I will add into my local storage array.
+  //find how much time is left and then that is what needs to be displayed in the initialcount span. That is what will be pushed into my object that I will add into my local storage array.
 
-  // Render a new li for each todo
+  // Render a new li for each initial
   for (var i = 0; i < initials.length; i++) {
     var initial = initials[i];
 
@@ -216,19 +211,19 @@ function renderInitials() {
 
 // This function is being called below and will run when the page loads.
 function init() {
-  // Get stored todos from localStorage
+  // Get stored initials from localStorage
   var storedInitials = JSON.parse(localStorage.getItem("initials"));
-  // If todos were retrieved from localStorage, update the todos array to it
+  // If initials were retrieved from localStorage, update the initials array to it
   if (storedInitials !== null) {
     initials = storedInitials;
   }
 
-  // This is a helper function that will render todos to the DOM
+  // This is a helper function that will render initials to the DOM
   renderInitials();
 }
 
 function storeInitials() {
-  // Stringify and set key in localStorage to todos array
+  // Stringify and set key in localStorage to initials array
   localStorage.setItem("initials", JSON.stringify(initials));
 }
 
@@ -238,31 +233,31 @@ initialForm.addEventListener("submit", function(event) {
 
   var initialText = initialInput.value.trim();
 
-  // Return from function early if submitted todoText is blank
+  // Return from function early if submitted initialText is blank
   if (initialText === "") {
     return;
   }
 
-  // Add new todoText to todos array, clear the input
+  // Add new initialText to initials array, clear the input
   initials.push(initialText);
   initialInput.value = "";
 
-  // Store updated todos in localStorage, re-render the list
+  // Store updated initials in localStorage, re-render the list
   storeInitials();
   renderInitials();
 });
 
-// Add click event to todoList element
+// Add click event to initialList element
 initialList.addEventListener("click", function(event) {
   var element = event.target;
 
   // Checks if element is a button
   if (element.matches("button") === true) {
-    // Get its data-index value and remove the todo element from the list
+    // Get its data-index value and remove the initial element from the list
     var index = element.parentElement.getAttribute("data-index");
     initials.splice(index, 1);
 
-    // Store updated todos in localStorage, re-render the list
+    // Store updated initials in localStorage, re-render the list
     storeInitials();
     renderInitials();
   }
