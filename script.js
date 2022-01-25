@@ -88,7 +88,7 @@ var timerInterval = setInterval(function() {
     zeroSecsPage();
   }
 
-}, 1000);
+}, 1000); 
 
 //function who's purpose is to display the next question
 displayQuestion=function(){
